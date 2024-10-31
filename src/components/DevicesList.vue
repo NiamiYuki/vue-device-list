@@ -14,7 +14,7 @@ function remove(device: Device) {
 }
 
 function updateDeviceName(device: Device, newDeviceName: string) {
-  deviceList.value[deviceList.value.indexOf(device)].deviceName = newDeviceName
+  device.deviceName = newDeviceName
 }
 
 const isAdding = ref(false)
@@ -66,6 +66,6 @@ function saveAdding(deviceName: string) {
     </div>
   </div>
   <div v-else>
-    <button class="button" @click="addingDevice(true)">Добавить узел</button>
+    <button class="button" @click="addingDevice(true)">Добавить девайс</button>
   </div>
 </template>

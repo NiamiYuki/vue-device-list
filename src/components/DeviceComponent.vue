@@ -39,6 +39,8 @@ function saveEditing() {
         </div>
       </div>
     </div>
-    <div class="card-content">узлы: <NodesList v-bind:device="device" /></div>
+    <div class="card-content">
+      узлы: <NodesList v-bind:nodes="device.nodes" />
+    </div>
   </div>
 </template>

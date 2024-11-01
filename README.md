@@ -1,5 +1,8 @@
 # vue-test-devices
 
+Requires Node 18+
+Built on Node 20
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

@@ -25,11 +25,16 @@ function saveEditing() {
 
 <template>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header device-title">
       <div v-if="!isEdiiting" class="card-header-title">
         {{ props.device.deviceName }}
       </div>
-      <button class="button" @click="editingDevice(true)">Редактировать</button>
+      <button
+        class="button is-primary is-outlined is-rounded is-small"
+        @click="editingDevice(true)"
+      >
+        ✎
+      </button>
       <div v-if="isEdiiting" class="field has-addons">
         <div class="control">
           <input class="input" v-model="deviceName" />
@@ -44,3 +49,10 @@ function saveEditing() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.device-title {
+  display: flex;
+  align-items: center;
+}
+</style>

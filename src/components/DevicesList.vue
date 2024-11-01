@@ -32,34 +32,37 @@ function saveAdding(deviceName: string) {
 </script>
 
 <template>
-  <div
-    v-for="device in deviceList"
-    v-bind:key="device.deviceName"
-    class="field has-addons"
-  >
-    <DeviceComponent
-      v-bind:device="device"
-      @change-device-name="
-        newDeviceName => updateDeviceName(device, newDeviceName)
-      "
-    />
-
-    <button
-      class="button is-danger is-rounded is-small"
-      @click="remove(device)"
+  <div class="device-list">
+    <div
+      v-for="device in deviceList"
+      v-bind:key="device.deviceName"
+      class="field has-addons"
     >
-      X
-    </button>
+      <DeviceComponent
+        v-bind:device="device"
+        @change-device-name="
+          newDeviceName => updateDeviceName(device, newDeviceName)
+        "
+      />
+
+      <button
+        class="button is-danger is-rounded is-small"
+        @click="remove(device)"
+      >
+        X
+      </button>
+    </div>
   </div>
+
   <div v-if="isAdding" class="field has-addons">
-    <div class="control">
+    <div>
       <input
         class="input"
         v-model="editingValue"
         placeholder="Введите название девайса"
       />
     </div>
-    <div class="control">
+    <div>
       <button @click="saveAdding(editingValue)" class="button">
         Сохранить
       </button>
@@ -69,3 +72,12 @@ function saveAdding(deviceName: string) {
     <button class="button" @click="addingDevice(true)">Добавить девайс</button>
   </div>
 </template>
+
+<style scoped>
+.device-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+}
+</style>

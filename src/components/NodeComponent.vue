@@ -24,12 +24,17 @@ function saveEditing() {
 
 <template>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header node-title">
       <div class="card-header-title">
         <div v-if="!isEdiiting" class="card-header-title">
           {{ props.node.nodeName }}
         </div>
-        <button class="button" @click="editingNode(true)">Редактировать</button>
+        <button
+          class="button is-primary is-outlined is-rounded is-small"
+          @click="editingNode(true)"
+        >
+          ✎
+        </button>
         <div v-if="isEdiiting" class="field has-addons">
           <div class="control">
             <input class="input" v-model="nodeName" />
@@ -42,3 +47,10 @@ function saveEditing() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.node-title {
+  display: flex;
+  align-items: center;
+}
+</style>
